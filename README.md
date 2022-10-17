@@ -25,7 +25,9 @@ Implement air quality maps with open data and build multiple PM2.5 prediction mo
 2.	預測
 程式碼 : 位於 file<Predict> 
 -	執行topredict_data_formmat.py
+  
 ![image](https://user-images.githubusercontent.com/107039489/196293913-25720eaa-aa31-4eee-a3ea-520037b99ba9.png)
+  
 : 將每一小時溫濕度、PM2.5資料爬蟲下來。
 : 生成預測資料集to_predict.csv。
   
