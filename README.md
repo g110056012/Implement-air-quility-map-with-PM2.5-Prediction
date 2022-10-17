@@ -36,15 +36,15 @@ Implement air quality maps with open data and build multiple PM2.5 prediction mo
 
 -	執行Final_predict.py
 ![image](https://user-images.githubusercontent.com/107039489/196294213-ec68d920-7815-42c6-8fa3-b44b2cb45e1b.png)
-: load model檔及scaler檔
-: 將finalpredict.csv丟入模型，進行預測。
-: 生成未來8小時預測資料 TJ_predict_8hr_Allsection.csv。
+  : load model檔及scaler檔
+  : 將finalpredict.csv丟入模型，進行預測。
+  : 生成未來8小時預測資料 TJ_predict_8hr_Allsection.csv。
 
 -	執行location_lat_lon.py
 ![image](https://user-images.githubusercontent.com/107039489/196294277-2085e4d7-8454-4e65-b831-1bd9259c93a3.png)
-: 將TJ_predict_8hr_Allsection.csv增加經緯度欄位。
-: 輸出覆蓋未來8小時預測資料 TJ_predict_8hr_Allsection.csv。
-: TJ_predict_8hr_Allsection.csv輸出至網頁後端資料夾。
+  : 將TJ_predict_8hr_Allsection.csv增加經緯度欄位。
+  : 輸出覆蓋未來8小時預測資料 TJ_predict_8hr_Allsection.csv。
+  : TJ_predict_8hr_Allsection.csv輸出至網頁後端資料夾。
 ![image](https://user-images.githubusercontent.com/107039489/196294308-b7f26357-5669-4a69-8ca0-ab812aa884ea.png)
 
 
@@ -53,21 +53,24 @@ Implement air quality maps with open data and build multiple PM2.5 prediction mo
 -	在Wordpress架構下架設，所以將整個htdocs包裝，可以直接匯入。
 -	前端程式碼:  file<Web> \\htdocs\\wp-content\\themes\\TJ project\\
 -	後端程式碼api 
-:  file<Web> \\htdocs\\wp-content\\plugins\\tj\\includes\\api\\
-: getPredictData.php
+  :  file<Web> \\htdocs\\wp-content\\plugins\\tj\\includes\\api\\
+  : getPredictData.php
 將TJ_predict_8hr_Allsection.csv轉換成Geojson以及json格式，讓前端可以使用Leaflet好打點於地圖上。
 ![image](https://user-images.githubusercontent.com/107039489/196294376-d370cf28-2bbb-4077-99a4-2b3d25a581c3.png)
 
 -	TJ_predict_8hr_Allsection.csv在網頁後端資料夾
-:  file<Web> \\htdocs\\wp-content\\plugins\\tj\\includes\\data\\
+  :  file<Web> \\htdocs\\wp-content\\plugins\\tj\\includes\\data\\
 
+  
   
 4.	程式排程
 -	終端機執行: cronjob –l
 -	設定一小時執一次: 0 * * * * 
+  
 ![image](https://user-images.githubusercontent.com/107039489/196294601-7e6c520e-f419-4827-9ebf-7c075392d6a6.png)
 
 cronjob.sh
+  
 ![image](https://user-images.githubusercontent.com/107039489/196294631-97f693ed-252f-4939-b1b2-543d0225dfe5.png)
 
 
